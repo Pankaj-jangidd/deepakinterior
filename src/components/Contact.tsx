@@ -109,7 +109,7 @@ const Contact: React.FC = () => {
       <section
         ref={sectionRef}
         id="contact"
-        className="bg-[#f5f5f0] flex items-center justify-center scroll-mt-16 min-h-screen py-20 md:py-32"
+        className="bg-[#f5f5f0] flex items-center justify-center scroll-mt-16 min-h-screen py-16 md:py-32"
       >
         <div className="container-custom mx-auto px-4">
           {/* Section Header */}

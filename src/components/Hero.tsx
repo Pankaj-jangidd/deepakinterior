@@ -35,11 +35,14 @@ const Hero: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-white tracking-tight break-words"
-            style={{ lineHeight: "1.2" }}
+            className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white tracking-tight break-words"
+            style={{ lineHeight: "1.1" }}
           >
             End-to-End Interior &<br className="hidden md:block" />
-            <span className="block md:inline"> CNC Solutions</span>
+            <span className="block md:inline text-olive-300">
+              {" "}
+              CNC Solutions
+            </span>
           </motion.h1>
 
           {/* Subheading */}

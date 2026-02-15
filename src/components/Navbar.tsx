@@ -133,7 +133,7 @@ const Navbar: React.FC = () => {
                     <button
                       key={item.label}
                       onClick={() => handleNavClick(item.href)}
-                      className={`text-left text-xl font-medium transition-colors ${
+                      className={`text-left text-2xl font-bold transition-colors ${
                         activeSection === item.href.slice(1)
                           ? "text-olive"
                           : "text-dark hover:text-olive"

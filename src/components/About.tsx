@@ -34,7 +34,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-light flex flex-col justify-center items-center py-20 md:py-32 scroll-mt-16"
+      className="min-h-screen bg-light flex flex-col justify-center items-center py-16 md:py-32 scroll-mt-16"
     >
       <div className="container-custom mx-auto px-4">
         <motion.div

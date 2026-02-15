@@ -38,7 +38,7 @@ const Team: React.FC = () => {
   return (
     <section
       id="services"
-      className="min-h-screen bg-[#f5f5f0] flex flex-col justify-center py-20 md:py-32"
+      className="min-h-screen bg-[#f5f5f0] flex flex-col justify-center py-16 md:py-32"
     >
       <div className="container-custom mx-auto px-4">
         {/* Section Header */}

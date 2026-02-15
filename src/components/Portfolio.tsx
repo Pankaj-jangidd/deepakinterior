@@ -29,16 +29,16 @@ const Portfolio: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="h-screen bg-light flex flex-col justify-center"
+      className="min-h-screen bg-light flex flex-col justify-center py-20 md:py-32"
     >
-      <div className="container-custom mx-auto">
+      <div className="container-custom mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-8"
+          className="flex flex-col items-center text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-dark">
             Our Projects
@@ -47,7 +47,7 @@ const Portfolio: React.FC = () => {
         </motion.div>
 
         {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {portfolioItems.map((item, index) => (
             <motion.div
               key={item.title}
@@ -55,7 +55,7 @@ const Portfolio: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="relative h-[400px] md:h-[500px] overflow-hidden group rounded-3xl shadow-2xl"
+              className="relative h-[400px] md:h-[500px] overflow-hidden group rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               {/* Background Image */}
               <div
@@ -67,22 +67,22 @@ const Portfolio: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
               {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 text-white">
                 <motion.span
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
-                  className="text-accent text-xs font-semibold tracking-widest"
+                  className="text-accent text-xs font-semibold tracking-widest uppercase block mb-1"
                 >
                   {item.subtitle}
                 </motion.span>
 
-                <h3 className="text-2xl md:text-3xl font-bold mt-2 mb-3">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">
                   {item.title}
                 </h3>
 
-                <p className="text-gray-300 text-sm md:text-base mb-6 max-w-sm">
+                <p className="text-gray-300 text-sm md:text-base mb-8 max-w-sm line-clamp-2 md:line-clamp-none">
                   {item.description}
                 </p>
 

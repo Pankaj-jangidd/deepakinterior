@@ -144,7 +144,7 @@ const Navbar: React.FC = () => {
                   ))}
                   <Link
                     href="/admin/login"
-                    className="mt-4 bg-accent text-white px-6 py-3 rounded-full font-medium text-center hover:opacity-90 transition-opacity"
+                    className="mt-4 bg-olive text-white px-6 py-3 rounded-full font-medium text-center hover:opacity-90 transition-opacity"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Admin Panel

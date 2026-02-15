@@ -109,17 +109,16 @@ const Contact: React.FC = () => {
       <section
         ref={sectionRef}
         id="contact"
-        className="bg-[#f5f5f0] flex items-center justify-center scroll-mt-16"
-        style={{ height: "calc(100vh - 65px)" }}
+        className="bg-[#f5f5f0] flex items-center justify-center scroll-mt-16 min-h-screen py-20 md:py-32"
       >
-        <div className="container-custom mx-auto">
+        <div className="container-custom mx-auto px-4">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col items-center text-center mb-8"
+            className="flex flex-col items-center text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-dark">
               Contact Us
@@ -127,7 +126,7 @@ const Contact: React.FC = () => {
             <div className="w-16 h-1 bg-olive mt-2" />
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto items-stretch">
             {/* Left Side - Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -136,7 +135,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="h-full flex flex-col"
             >
-              <h2 className="text-5xl md:text-6xl font-black text-dark leading-tight mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-dark leading-tight mb-8">
                 {displayText.split(" ").map((word, index) => (
                   <React.Fragment key={index}>
                     {index === 0 ? (
@@ -158,7 +157,7 @@ const Contact: React.FC = () => {
               </h2>
 
               {/* Contact Info Items - Increased height to 70px with hover animation */}
-              <div className="flex-1 flex flex-col gap-5 justify-evenly">
+              <div className="flex-1 flex flex-col gap-6 justify-center">
                 {/* Phone Number */}
                 <motion.a
                   href={`tel:${CONTACT_INFO.phoneRaw}`}
@@ -168,7 +167,7 @@ const Contact: React.FC = () => {
                   transition={{ duration: 0.4, delay: 0.1 }}
                   whileHover={{ y: -4, scale: 1.02 }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
-                  style={{ height: "70px" }}
+                  style={{ height: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
                     <Phone
@@ -192,7 +191,7 @@ const Contact: React.FC = () => {
                   transition={{ duration: 0.4, delay: 0.2 }}
                   whileHover={{ y: -4, scale: 1.02 }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
-                  style={{ height: "70px" }}
+                  style={{ height: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
                     <Mail
@@ -201,7 +200,7 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <p className="text-base text-dark group-hover:text-olive transition-colors font-medium">
+                    <p className="text-base text-dark group-hover:text-olive transition-colors font-medium break-all">
                       {CONTACT_INFO.email}
                     </p>
                   </div>
@@ -218,7 +217,7 @@ const Contact: React.FC = () => {
                   transition={{ duration: 0.4, delay: 0.3 }}
                   whileHover={{ y: -4, scale: 1.02 }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
-                  style={{ height: "70px" }}
+                  style={{ height: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
                     <Instagram
@@ -244,7 +243,7 @@ const Contact: React.FC = () => {
                   transition={{ duration: 0.4, delay: 0.4 }}
                   whileHover={{ y: -4, scale: 1.02 }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
-                  style={{ height: "70px" }}
+                  style={{ minHeight: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
                     <MapPin
@@ -253,7 +252,7 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <p className="text-base text-dark group-hover:text-olive transition-colors font-medium">
+                    <p className="text-sm md:text-base text-dark group-hover:text-olive transition-colors font-medium">
                       Door No. 391-B, 100 Feet Inner Ring Road, Hosur 635109
                     </p>
                   </div>
@@ -267,7 +266,7 @@ const Contact: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ margin: "-100px" }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl p-8 shadow-lg h-full flex flex-col justify-center"
+              className="bg-white rounded-2xl p-6 md:p-8 shadow-lg h-full flex flex-col justify-center"
             >
               <form
                 onSubmit={handleSubmit(onSubmit)}
@@ -380,11 +379,11 @@ const Contact: React.FC = () => {
                 </div>
 
                 {/* Submit Button */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 mt-4">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-olive text-white font-medium py-4 rounded-lg hover:bg-olive-dark transition-colors disabled:opacity-50 uppercase tracking-widest text-sm"
+                    className="w-full bg-olive text-white font-medium py-4 rounded-lg hover:bg-olive-dark transition-colors disabled:opacity-50 uppercase tracking-widest text-sm shadow-md hover:shadow-lg"
                   >
                     {isSubmitting ? "Sending..." : "SEND MESSAGE"}
                   </button>
@@ -394,7 +393,7 @@ const Contact: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center justify-center gap-2 text-green-600"
+                    className="flex items-center justify-center gap-2 text-green-600 mt-2"
                   >
                     <CheckCircle size={20} />
                     <span className="text-sm font-medium">
@@ -407,7 +406,7 @@ const Contact: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="flex items-center justify-center gap-2 text-red-600"
+                    className="flex items-center justify-center gap-2 text-red-600 mt-2"
                   >
                     <XCircle size={20} />
                     <span className="text-sm font-medium">

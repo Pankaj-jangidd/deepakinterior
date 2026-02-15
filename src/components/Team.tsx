@@ -38,16 +38,16 @@ const Team: React.FC = () => {
   return (
     <section
       id="services"
-      className="h-screen bg-[#f5f5f0] flex flex-col justify-center"
+      className="min-h-screen bg-[#f5f5f0] flex flex-col justify-center py-20 md:py-32"
     >
-      <div className="container-custom mx-auto">
+      <div className="container-custom mx-auto px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center text-center mb-8"
+          className="flex flex-col items-center text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-dark">
             Our Managers
@@ -56,7 +56,7 @@ const Team: React.FC = () => {
         </motion.div>
 
         {/* Team Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {teamData.map((member, index) => (
             <motion.div
               key={member.name}
@@ -74,7 +74,7 @@ const Team: React.FC = () => {
                 zIndex: 50,
                 boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.3)",
               }}
-              className={`${member.bgColor} p-8 md:p-12 text-center cursor-pointer relative z-10 flex flex-col items-center justify-center rounded-2xl transition-all duration-75 shadow-2xl`}
+              className={`${member.bgColor} p-8 md:p-12 text-center cursor-pointer relative z-10 flex flex-col items-center justify-center rounded-2xl transition-all duration-75 shadow-lg border border-gray-100 hover:border-olive/20`}
             >
               {/* Company Name */}
               <h3 className="text-2xl md:text-3xl font-bold text-olive tracking-wider mb-8">
@@ -103,7 +103,7 @@ const Team: React.FC = () => {
               </p>
 
               {/* Description */}
-              <p className="text-grey text-sm leading-relaxed mb-6 max-w-md mx-auto">
+              <p className="text-grey text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto">
                 {member.description}
               </p>
 
@@ -112,7 +112,7 @@ const Team: React.FC = () => {
                 href={`tel:${member.phone}`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center gap-2 bg-olive text-white font-medium px-6 py-3 rounded-full hover:bg-olive-dark transition-colors"
+                className="inline-flex items-center gap-2 bg-olive text-white font-medium px-8 py-3 rounded-full hover:bg-olive-dark transition-colors shadow-md"
               >
                 <Phone size={18} />
                 {member.phoneDisplay}

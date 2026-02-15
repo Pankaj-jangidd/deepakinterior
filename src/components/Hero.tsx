@@ -12,10 +12,13 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="relative h-screen">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-12"
+    >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat fixed"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80')`,
         }}
@@ -23,20 +26,20 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      {/* Content - Absolutely Centered */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center px-6 max-w-4xl">
+      {/* Content */}
+      <div className="relative z-10 container-custom mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto">
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight"
+            className="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight text-white tracking-tight break-words"
             style={{ lineHeight: "1.2" }}
           >
-            End-to-End Interior &<br />
-            CNC Solutions
+            End-to-End Interior &<br className="hidden md:block" />
+            <span className="block md:inline"> CNC Solutions</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -45,9 +48,9 @@ const Hero: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-6 text-lg text-gray-200 leading-relaxed max-w-2xl mx-auto"
+            className="mt-6 text-base md:text-lg lg:text-xl text-gray-200 leading-relaxed max-w-2xl mx-auto"
           >
-            Hosur's premier destination for luxury custom furniture and
+            Hosur&apos;s premier destination for luxury custom furniture and
             architectural CNC precision. We transform spaces into masterpieces.
           </motion.p>
 
@@ -57,17 +60,17 @@ const Hero: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-8 flex flex-wrap gap-4 justify-center"
+            className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <button
               onClick={() => scrollToSection("portfolio")}
-              className="bg-olive hover:bg-olive/90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              className="w-full sm:w-auto bg-olive hover:bg-olive/90 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
             >
               Explore Our Projects
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
+              className="w-full sm:w-auto bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg"
             >
               Get a Quote
             </button>

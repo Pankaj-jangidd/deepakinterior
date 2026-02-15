@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Deepak Interior & CNC Website
+
+A modern, production-ready website for Deepak Interior & CNC - an interior design and CNC manufacturing firm based in Hosur.
+
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4)
+
+## Features
+
+- ✨ Modern, responsive design
+- 🎨 Smooth animations with Framer Motion
+- 📱 Mobile-first approach
+- 🖼️ Portfolio galleries with lightbox
+- 📧 Contact form with email integration
+- 🔐 Admin panel for content management
+- 🔍 SEO optimized with metadata and structured data
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Forms**: React Hook Form + Zod
+- **Icons**: Lucide React
+- **Email**: EmailJS
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/deepak-interior.git
+cd deepak-interior
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env.local` file based on `.env.example`:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Fill in your EmailJS credentials in `.env.local`
+
+5. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── admin/             # Admin panel pages
+│   ├── portfolio/         # Portfolio pages
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/            # React components
+│   ├── admin/            # Admin-specific components
+│   ├── ui/               # Reusable UI components
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── About.tsx
+│   ├── Team.tsx
+│   ├── Portfolio.tsx
+│   ├── Contact.tsx
+│   └── Footer.tsx
+└── lib/                   # Utilities and helpers
+    ├── constants.ts
+    ├── email.ts
+    ├── storage.ts
+    ├── types.ts
+    └── utils.ts
+```
 
-## Learn More
+## Admin Panel
 
-To learn more about Next.js, take a look at the following resources:
+The admin panel allows you to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Upload and manage portfolio images
+- View and manage contact form submissions
+- Update profile information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Default Credentials
 
-## Deploy on Vercel
+- Username: `admin`
+- Password: `deepak2025`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> ⚠️ Change these credentials in production!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## EmailJS Setup
+
+1. Create an account at [EmailJS](https://www.emailjs.com/)
+2. Create an email service (Gmail, Outlook, etc.)
+3. Create an email template with the following variables:
+   - `from_name`
+   - `from_email`
+   - `phone`
+   - `message`
+   - `to_name`
+4. Add your credentials to `.env.local`
+
+## Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import the project in [Vercel](https://vercel.com)
+3. Add environment variables
+4. Deploy!
+
+### Other Platforms
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## Upgrading to Firebase/Supabase
+
+The storage layer (`src/lib/storage.ts`) is designed to be easily swapped:
+
+1. Install the Firebase/Supabase SDK
+2. Update the functions in `storage.ts` to use the new backend
+3. The rest of the app will work without changes
+
+## License
+
+MIT License - feel free to use this for your own projects!
+
+## Contact
+
+- **Website**: [deepakinterior.com](https://deepakinterior.com)
+- **Phone**: +91 93603 49866
+- **Email**: deepakinterior.cnc@gmail.com

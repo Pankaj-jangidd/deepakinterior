@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
         id="contact"
         className="bg-[#f5f5f0] flex items-center justify-center scroll-mt-16 min-h-screen py-16 md:py-32"
       >
-        <div className="container-custom mx-auto px-4">
+        <div className="container-custom flex flex-col items-center">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
             <div className="w-16 h-1 bg-olive mt-2" />
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 w-full items-stretch">
             {/* Left Side - Info */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}

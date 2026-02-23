@@ -40,9 +40,7 @@ const Portfolio: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">
-            Our Projects
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">Our Work</h2>
           <div className="w-16 h-1 bg-olive mt-4" />
         </motion.div>
 
@@ -73,12 +71,12 @@ const Portfolio: React.FC = () => {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
-                  className="text-accent text-xs font-semibold tracking-widest uppercase block mb-1"
+                  className="text-white text-xs font-semibold tracking-widest uppercase block mb-1"
                 >
                   {item.subtitle}
                 </motion.span>
 
-                <h3 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 leading-tight text-white">
                   {item.title}
                 </h3>
 

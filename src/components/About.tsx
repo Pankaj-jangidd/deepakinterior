@@ -36,7 +36,7 @@ const About: React.FC = () => {
       id="about"
       className="min-h-screen bg-light flex flex-col justify-center items-center py-16 md:py-32 scroll-mt-16"
     >
-      <div className="container-custom mx-auto px-4">
+      <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ const About: React.FC = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{}}
                   transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
-                  className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm"
+                  className="flex items-center gap-3 p-3"
                 >
                   <CheckCircle className="text-olive flex-shrink-0" size={24} />
                   <span className="text-dark font-medium">{feature}</span>

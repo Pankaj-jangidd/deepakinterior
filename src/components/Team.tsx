@@ -40,7 +40,7 @@ const Team: React.FC = () => {
       id="services"
       className="min-h-screen bg-[#f5f5f0] flex flex-col justify-center py-16 md:py-32"
     >
-      <div className="container-custom mx-auto px-4">
+      <div className="container-custom flex flex-col items-center justify-center">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -56,25 +56,23 @@ const Team: React.FC = () => {
         </motion.div>
 
         {/* Team Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full max-w-7xl mx-auto">
           {teamData.map((member, index) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ margin: "-100px" }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{
-                duration: 0.1,
-                opacity: { duration: 0.5, delay: index * 0.2 },
-                y: { duration: 0.1 },
+                duration: 0.5,
+                delay: index * 0.2,
               }}
               whileHover={{
-                y: -15,
+                y: -8,
                 scale: 1.02,
-                zIndex: 50,
                 boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.3)",
               }}
-              className={`${member.bgColor} p-8 md:p-12 text-center cursor-pointer relative z-10 flex flex-col items-center justify-center rounded-2xl transition-all duration-75 shadow-lg border border-gray-100 hover:border-olive/20`}
+              className={`${member.bgColor} p-8 md:p-12 text-center cursor-pointer relative z-10 flex flex-col items-center justify-center rounded-2xl shadow-lg border border-gray-100 hover:border-olive/20 transition-colors duration-200`}
             >
               {/* Company Name */}
               <h3 className="text-2xl md:text-3xl font-bold text-olive tracking-wider mb-8">

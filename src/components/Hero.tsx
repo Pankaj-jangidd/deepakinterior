@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
     >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat fixed"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=80')`,
         }}
@@ -27,8 +27,8 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-custom mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
+      <div className="relative z-10 container-custom text-center flex flex-col items-center justify-center">
+        <div className="max-w-4xl mx-auto flex flex-col items-center justify-center">
           {/* Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="mt-8 md:mt-10 flex flex-row flex-wrap gap-4 justify-center items-center"
           >
             <button
               onClick={() => scrollToSection("portfolio")}

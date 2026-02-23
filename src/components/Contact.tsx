@@ -170,7 +170,7 @@ const Contact: React.FC = () => {
                     zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-[0_20px_40px_rgba(58,69,42,0.15)] border border-transparent hover:border-olive/30 hover:bg-olive/[0.01] transition-all duration-100"
                   style={{ height: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">
@@ -198,7 +198,7 @@ const Contact: React.FC = () => {
                     zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-[0_20px_40px_rgba(58,69,42,0.15)] border border-transparent hover:border-olive/30 hover:bg-olive/[0.01] transition-all duration-100"
                   style={{ height: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">
@@ -228,7 +228,7 @@ const Contact: React.FC = () => {
                     zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-[0_20px_40px_rgba(58,69,42,0.15)] border border-transparent hover:border-olive/30 hover:bg-olive/[0.01] transition-all duration-100"
                   style={{ height: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">
@@ -258,7 +258,7 @@ const Contact: React.FC = () => {
                     zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-[0_20px_40px_rgba(58,69,42,0.15)] border border-transparent hover:border-olive/30 hover:bg-olive/[0.01] transition-all duration-100"
                   style={{ minHeight: "80px" }}
                 >
                   <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">

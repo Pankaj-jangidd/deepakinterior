@@ -3,6 +3,7 @@ export interface PortfolioImage {
   id: string;
   category: string;
   imageUrl: string;
+  cloudinaryId?: string;
   uploadedAt: number;
 }
 

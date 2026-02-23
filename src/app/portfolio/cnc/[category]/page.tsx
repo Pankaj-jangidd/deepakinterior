@@ -11,16 +11,6 @@ import { getImagesByCategory } from "@/lib/storage";
 import { PortfolioImage } from "@/lib/types";
 import Lightbox from "@/components/ui/Lightbox";
 
-// Sample placeholder images for demo
-const sampleImages = [
-  "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80",
-  "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=800&q=80",
-  "https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80",
-  "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80",
-  "https://images.unsplash.com/photo-1600566752229-250ed79470f8?w=800&q=80",
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80",
-];
-
 export default function CNCCategoryGallery() {
   const params = useParams();
   const category = params.category as string;
@@ -31,15 +21,20 @@ export default function CNCCategoryGallery() {
   const categoryInfo = CNC_CATEGORIES.find((c) => c.slug === category);
 
   useEffect(() => {
-    // Get images from localStorage
-    const storedImages = getImagesByCategory("cnc", category);
-
-    if (storedImages.length > 0) {
+    const loadImages = () => {
+      const storedImages = getImagesByCategory("cnc", category);
       setImages(storedImages.map((img: PortfolioImage) => img.imageUrl));
-    } else {
-      // Use sample images if no uploaded images
-      setImages(sampleImages);
-    }
+    };
+
+    loadImages();
+
+    const handleFocus = () => loadImages();
+    window.addEventListener("focus", handleFocus);
+    window.addEventListener("storage", handleFocus);
+    return () => {
+      window.removeEventListener("focus", handleFocus);
+      window.removeEventListener("storage", handleFocus);
+    };
   }, [category]);
 
   const openLightbox = (index: number) => {
@@ -68,31 +63,42 @@ export default function CNCCategoryGallery() {
   return (
     <main className="min-h-screen bg-[var(--primary-white)]">
       {/* Header */}
-      <div className="bg-[var(--text-dark)] text-white py-20">
-        <div className="container-custom mx-auto px-4 lg:px-8">
+      <div
+        className="container-custom mx-auto text-center"
+        style={{ paddingTop: "80px", paddingBottom: "60px" }}
+      >
+        {/* Back Arrow + Heading on same line */}
+        <div className="flex items-center mb-2">
           <Link
             href="/portfolio/cnc"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6"
+            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 text-[#2c3e50] transition-all cursor-pointer"
           >
-            <ArrowLeft size={20} />
-            Back to CNC Portfolio
+            <ArrowLeft size={22} strokeWidth={3} />
           </Link>
+
+          {/* Heading - centered */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-bold"
+            transition={{ duration: 0.5 }}
+            className="text-4xl md:text-5xl font-black text-[#2c3e50] flex-1"
           >
             {categoryInfo.name}
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-gray-400 mt-2 text-lg"
-          >
-            {categoryInfo.description}
-          </motion.p>
+
+          {/* Invisible spacer to balance the arrow */}
+          <div className="w-10" />
         </div>
+
+        {/* Subheading */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15, duration: 0.5 }}
+          className="text-olive text-base md:text-lg font-semibold"
+        >
+          {categoryInfo.description}
+        </motion.p>
       </div>
 
       {/* Gallery Grid */}

@@ -55,12 +55,14 @@ export const getCNCImages = (): PortfolioImage[] => {
 export const addInteriorImage = (
   category: string,
   imageUrl: string,
+  cloudinaryId?: string,
 ): PortfolioImage => {
   const images = getInteriorImages();
   const newImage: PortfolioImage = {
     id: generateId(),
     category,
     imageUrl,
+    cloudinaryId,
     uploadedAt: Date.now(),
   };
   images.push(newImage);
@@ -71,12 +73,14 @@ export const addInteriorImage = (
 export const addCNCImage = (
   category: string,
   imageUrl: string,
+  cloudinaryId?: string,
 ): PortfolioImage => {
   const images = getCNCImages();
   const newImage: PortfolioImage = {
     id: generateId(),
     category,
     imageUrl,
+    cloudinaryId,
     uploadedAt: Date.now(),
   };
   images.push(newImage);
@@ -84,14 +88,20 @@ export const addCNCImage = (
   return newImage;
 };
 
-export const deleteInteriorImage = (id: string): void => {
-  const images = getInteriorImages().filter((img) => img.id !== id);
-  localStorage.setItem(STORAGE_KEYS.INTERIOR_IMAGES, JSON.stringify(images));
+export const deleteInteriorImage = (id: string): string | undefined => {
+  const images = getInteriorImages();
+  const target = images.find((img) => img.id === id);
+  const filtered = images.filter((img) => img.id !== id);
+  localStorage.setItem(STORAGE_KEYS.INTERIOR_IMAGES, JSON.stringify(filtered));
+  return target?.cloudinaryId;
 };
 
-export const deleteCNCImage = (id: string): void => {
-  const images = getCNCImages().filter((img) => img.id !== id);
-  localStorage.setItem(STORAGE_KEYS.CNC_IMAGES, JSON.stringify(images));
+export const deleteCNCImage = (id: string): string | undefined => {
+  const images = getCNCImages();
+  const target = images.find((img) => img.id === id);
+  const filtered = images.filter((img) => img.id !== id);
+  localStorage.setItem(STORAGE_KEYS.CNC_IMAGES, JSON.stringify(filtered));
+  return target?.cloudinaryId;
 };
 
 export const getImagesByCategory = (

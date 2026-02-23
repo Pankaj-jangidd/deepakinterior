@@ -12,7 +12,6 @@ import {
   addCNCImage,
   deleteInteriorImage,
   deleteCNCImage,
-  fileToBase64,
   getImageCount,
 } from "@/lib/storage";
 import { PortfolioImage } from "@/lib/types";
@@ -59,8 +58,7 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
     const file = e.target.files?.[0];
     if (file) {
       setSelectedFile(file);
-      const base64 = await fileToBase64(file);
-      setPreviewImage(base64);
+      setPreviewImage(URL.createObjectURL(file));
     }
   };
 
@@ -68,31 +66,63 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
     if (!selectedFile || !uploadCategory) return;
 
     setIsUploading(true);
-    const base64 = await fileToBase64(selectedFile);
+    try {
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+      formData.append("folder", `deepak-${type}/${uploadCategory}`);
 
-    if (type === "interior") {
-      addInteriorImage(uploadCategory, base64);
-    } else {
-      addCNCImage(uploadCategory, base64);
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) throw new Error("Upload failed");
+
+      const { url, publicId } = await res.json();
+
+      if (type === "interior") {
+        addInteriorImage(uploadCategory, url, publicId);
+      } else {
+        addCNCImage(uploadCategory, url, publicId);
+      }
+
+      loadImages();
+      onUpdate();
+      setIsModalOpen(false);
+      setPreviewImage(null);
+      setSelectedFile(null);
+    } catch (error) {
+      console.error("Upload error:", error);
+      alert("Failed to upload image. Please try again.");
+    } finally {
+      setIsUploading(false);
     }
-
-    loadImages();
-    onUpdate();
-    setIsModalOpen(false);
-    setPreviewImage(null);
-    setSelectedFile(null);
-    setIsUploading(false);
   };
 
-  const handleDelete = (id: string) => {
-    if (type === "interior") {
-      deleteInteriorImage(id);
-    } else {
-      deleteCNCImage(id);
+  const handleDelete = async (id: string) => {
+    try {
+      let cloudinaryId: string | undefined;
+      if (type === "interior") {
+        cloudinaryId = deleteInteriorImage(id);
+      } else {
+        cloudinaryId = deleteCNCImage(id);
+      }
+
+      // Delete from Cloudinary in background
+      if (cloudinaryId) {
+        fetch("/api/delete", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ publicId: cloudinaryId }),
+        }).catch(console.error);
+      }
+
+      loadImages();
+      onUpdate();
+      setDeleteConfirm(null);
+    } catch (error) {
+      console.error("Delete error:", error);
     }
-    loadImages();
-    onUpdate();
-    setDeleteConfirm(null);
   };
 
   return (
@@ -176,11 +206,20 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
                 animate={{ opacity: 1, scale: 1 }}
                 className="relative aspect-square rounded-xl overflow-hidden group"
               >
+                {/* Skeleton loader */}
+                <div
+                  className="absolute inset-0 bg-gray-200 animate-pulse"
+                  id={`skeleton-${image.id}`}
+                />
                 <Image
                   src={image.imageUrl}
                   alt="Portfolio image"
                   fill
                   className="object-cover"
+                  onLoad={() => {
+                    const el = document.getElementById(`skeleton-${image.id}`);
+                    if (el) el.style.display = "none";
+                  }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all" />
                 <button
@@ -283,9 +322,31 @@ const ImageManagement: React.FC<ImageManagementProps> = ({
               <button
                 onClick={handleUpload}
                 disabled={!previewImage || isUploading}
-                className="w-full py-3.5 rounded-lg bg-[#2c3e50] hover:bg-[#1a252f] text-white font-semibold text-sm tracking-wider uppercase transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-full py-4 rounded-md bg-[#2c3e50] hover:bg-[#1a252f] text-white font-semibold text-sm tracking-wider uppercase transition-all disabled:opacity-40 disabled:cursor-not-allowed shadow-md hover:shadow-lg active:scale-[0.98]"
               >
-                {isUploading ? "Uploading..." : "Upload Image"}
+                {isUploading ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                        fill="none"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                    Uploading...
+                  </span>
+                ) : (
+                  "Upload Image"
+                )}
               </button>
             </motion.div>
           </motion.div>

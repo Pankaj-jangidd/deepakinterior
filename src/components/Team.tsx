@@ -11,7 +11,7 @@ const teamData = [
     name: "Virmaram Suthar",
     role: "MASTER CRAFTSMAN",
     description:
-      "The soul of our traditional roots, Virmaram brings decades of hands-on expertise, ensuring every piece reflects the intricate detailing and structural strength of Rajasthani woodcraft.",
+      "Virmaram carries the soul of our traditional roots, with decades of hands-on experience shaping finely detailed, structurally strong Rajasthani woodwork.",
     phone: "9442270932",
     phoneDisplay: "9442270932",
     image:
@@ -24,7 +24,7 @@ const teamData = [
     name: "Deepak Suthar",
     role: "CNC DIRECTOR",
     description:
-      "Bridging tradition with technology, Deepak leads our high-precision CNC operations, transforming complex designs and architectural concepts into perfectly executed forms.",
+      "Deepak blends craftsmanship with technology, leading our CNC operations to turn complex designs into precise, flawless executions.",
     phone: "9360349866",
     phoneDisplay: "9360349866",
     image:
@@ -71,18 +71,19 @@ const Team: React.FC = () => {
                 y: -8,
                 scale: 1.02,
                 boxShadow: "0 30px 60px -15px rgba(0, 0, 0, 0.3)",
+                transition: { duration: 0.15, ease: "easeOut" },
               }}
-              className={`${member.bgColor} p-8 md:p-12 text-center cursor-pointer relative z-10 flex flex-col items-center justify-center rounded-2xl shadow-lg border border-gray-100 hover:border-olive/20 transition-colors duration-200`}
+              className={`${member.bgColor} p-8 md:p-10 text-center cursor-pointer relative z-10 flex flex-col items-center justify-center rounded-2xl shadow-lg border border-gray-100 hover:border-olive/20 transition-colors duration-200`}
             >
               {/* Company Name */}
-              <h3 className="text-2xl md:text-3xl font-bold text-olive tracking-wider mb-8">
+              <h3 className="text-xl md:text-2xl font-bold text-olive tracking-wider mb-6">
                 {member.company}
               </h3>
 
               {/* Profile Image */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className={`relative w-36 h-36 md:w-44 md:h-44 mx-auto mb-6 rounded-full overflow-hidden ring-4 ${member.ringColor} shadow-lg`}
+                className={`relative w-48 h-48 md:w-60 md:h-60 mx-auto mb-6 rounded-full overflow-hidden ring-4 ${member.ringColor} shadow-lg`}
               >
                 <Image
                   src={member.image}
@@ -96,9 +97,6 @@ const Team: React.FC = () => {
               <h4 className="text-xl md:text-2xl font-bold text-dark mb-2">
                 {member.name}
               </h4>
-              <p className="text-sm font-semibold tracking-widest mb-4 text-accent uppercase">
-                {member.role}
-              </p>
 
               {/* Description */}
               <p className="text-grey text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto">

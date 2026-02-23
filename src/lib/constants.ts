@@ -31,7 +31,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "MASTER CRAFTSMAN",
     roleColor: "text-[var(--accent-red)]",
     description:
-      "The soul of our traditional roots. With decades of hands-on experience, Virmaram ensures every piece maintains the intricate detail and structural integrity that Rajasthani woodcraft is world-renowned for.",
+      "Virmaram carries the soul of our traditional roots, with decades of hands-on experience shaping finely detailed, structurally strong Rajasthani woodwork.",
     phone: "9442270932",
     image: "/images/team/virmaram.jpg",
     bgClass: "bg-[var(--light-grey)]",
@@ -41,7 +41,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: "CNC DIRECTOR",
     roleColor: "text-[var(--accent-red)]",
     description:
-      "Bridging tradition with tech. Deepak oversees our high-precision CNC operations, bringing complex geometric patterns and architectural visions to life with mathematical perfection and modern flair.",
+      "Deepak blends craftsmanship with technology, leading our CNC operations to turn complex designs into precise, flawless executions.",
     phone: "+91 93603 49866",
     image: "/images/team/deepak.jpg",
     bgClass: "bg-white",

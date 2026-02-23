@@ -18,7 +18,6 @@ import {
   clearAuthState,
   getAdminProfile,
   updateAdminProfile,
-  fileToBase64,
   getImageCount,
   getSubmissionCount,
 } from "@/lib/storage";
@@ -81,9 +80,25 @@ export default function AdminDashboard() {
   ) => {
     const file = e.target.files?.[0];
     if (file) {
-      const base64 = await fileToBase64(file);
-      updateAdminProfile({ image: base64 });
-      setProfile((prev) => ({ ...prev, image: base64 }));
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("folder", "deepak-admin/profile");
+
+        const res = await fetch("/api/upload", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!res.ok) throw new Error("Upload failed");
+
+        const { url } = await res.json();
+        updateAdminProfile({ image: url });
+        setProfile((prev) => ({ ...prev, image: url }));
+      } catch (error) {
+        console.error("Profile upload error:", error);
+        alert("Failed to upload profile image.");
+      }
     }
   };
 

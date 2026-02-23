@@ -164,23 +164,23 @@ const Contact: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
-                  transition={{ duration: 0.4, delay: 0.1 }}
+                  transition={{ duration: 0.3 }}
                   whileHover={{
                     y: -8,
                     scale: 1.02,
-                    transition: { type: "spring", stiffness: 400, damping: 25 },
+                    transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all duration-100 border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-100">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
                     <Phone
-                      className="text-dark/40 group-hover:text-olive transition-colors duration-100"
+                      className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}
                     />
                   </div>
                   <div>
-                    <p className="text-base text-dark group-hover:text-olive transition-colors duration-100 font-medium">
+                    <p className="text-base text-dark group-hover:text-olive transition-colors duration-75 font-medium">
                       {CONTACT_INFO.phone}
                     </p>
                   </div>
@@ -192,23 +192,23 @@ const Contact: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
-                  transition={{ duration: 0.4, delay: 0.2 }}
+                  transition={{ duration: 0.3 }}
                   whileHover={{
                     y: -8,
                     scale: 1.02,
-                    transition: { type: "spring", stiffness: 400, damping: 25 },
+                    transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all duration-100 border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-100">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
                     <Mail
-                      className="text-dark/40 group-hover:text-olive transition-colors duration-100"
+                      className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}
                     />
                   </div>
                   <div>
-                    <p className="text-base text-dark group-hover:text-olive transition-colors duration-100 font-medium break-all">
+                    <p className="text-base text-dark group-hover:text-olive transition-colors duration-75 font-medium break-all">
                       {CONTACT_INFO.email}
                     </p>
                   </div>
@@ -222,23 +222,23 @@ const Contact: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
-                  transition={{ duration: 0.4, delay: 0.3 }}
+                  transition={{ duration: 0.3 }}
                   whileHover={{
                     y: -8,
                     scale: 1.02,
-                    transition: { type: "spring", stiffness: 400, damping: 25 },
+                    transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all duration-100 border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-100">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
                     <Instagram
-                      className="text-dark/40 group-hover:text-olive transition-colors duration-100"
+                      className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}
                     />
                   </div>
                   <div>
-                    <p className="text-base text-dark group-hover:text-olive transition-colors duration-100 font-medium">
+                    <p className="text-base text-dark group-hover:text-olive transition-colors duration-75 font-medium">
                       deepakinterior&cnc
                     </p>
                   </div>
@@ -252,23 +252,23 @@ const Contact: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
-                  transition={{ duration: 0.4, delay: 0.4 }}
+                  transition={{ duration: 0.3 }}
                   whileHover={{
                     y: -8,
                     scale: 1.02,
-                    transition: { type: "spring", stiffness: 400, damping: 25 },
+                    transition: { duration: 0.1, ease: "easeOut" },
                   }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all duration-100 border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ minHeight: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-100">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
                     <MapPin
-                      className="text-dark/40 group-hover:text-olive transition-colors duration-100"
+                      className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}
                     />
                   </div>
                   <div>
-                    <p className="text-sm md:text-base text-dark group-hover:text-olive transition-colors duration-100 font-medium">
+                    <p className="text-sm md:text-base text-dark group-hover:text-olive transition-colors duration-75 font-medium">
                       Door No. 391-B, 100 Feet Inner Ring Road, Hosur 635109
                     </p>
                   </div>

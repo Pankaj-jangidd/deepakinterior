@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
+                  <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">
                     <Phone
                       className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}
@@ -201,7 +201,7 @@ const Contact: React.FC = () => {
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
+                  <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">
                     <Mail
                       className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}
@@ -231,7 +231,7 @@ const Contact: React.FC = () => {
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
+                  <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">
                     <Instagram
                       className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}
@@ -261,7 +261,7 @@ const Contact: React.FC = () => {
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ minHeight: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors duration-75">
+                  <div className="w-12 h-12 rounded-full bg-[#f5f5f0] border border-gray-200/50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 group-hover:border-olive/20 transition-all duration-75">
                     <MapPin
                       className="text-dark/40 group-hover:text-olive transition-colors duration-75"
                       size={20}

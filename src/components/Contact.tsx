@@ -165,13 +165,13 @@ const Contact: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
                   transition={{ duration: 0.4, delay: 0.1 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors">
                     <Phone
-                      className="text-olive group-hover:text-white transition-colors"
+                      className="text-dark/40 group-hover:text-olive transition-colors"
                       size={20}
                     />
                   </div>
@@ -189,13 +189,13 @@ const Contact: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
                   transition={{ duration: 0.4, delay: 0.2 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors">
                     <Mail
-                      className="text-olive group-hover:text-white transition-colors"
+                      className="text-dark/40 group-hover:text-olive transition-colors"
                       size={20}
                     />
                   </div>
@@ -215,13 +215,13 @@ const Contact: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
                   transition={{ duration: 0.4, delay: 0.3 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ height: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors">
                     <Instagram
-                      className="text-olive group-hover:text-white transition-colors"
+                      className="text-dark/40 group-hover:text-olive transition-colors"
                       size={20}
                     />
                   </div>
@@ -241,13 +241,13 @@ const Contact: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{}}
                   transition={{ duration: 0.4, delay: 0.4 }}
-                  whileHover={{ y: -4, scale: 1.02 }}
-                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-xl transition-all border border-transparent hover:border-olive/20"
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl transition-all border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
                   style={{ minHeight: "80px" }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-olive/10 flex items-center justify-center flex-shrink-0 group-hover:bg-olive transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center flex-shrink-0 group-hover:bg-olive/10 transition-colors">
                     <MapPin
-                      className="text-olive group-hover:text-white transition-colors"
+                      className="text-dark/40 group-hover:text-olive transition-colors"
                       size={20}
                     />
                   </div>

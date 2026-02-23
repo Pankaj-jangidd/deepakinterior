@@ -166,8 +166,8 @@ const Contact: React.FC = () => {
                   viewport={{}}
                   transition={{ duration: 0.3 }}
                   whileHover={{
-                    y: -8,
-                    scale: 1.02,
+                    scale: 1.05,
+                    zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
@@ -194,8 +194,8 @@ const Contact: React.FC = () => {
                   viewport={{}}
                   transition={{ duration: 0.3 }}
                   whileHover={{
-                    y: -8,
-                    scale: 1.02,
+                    scale: 1.05,
+                    zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
@@ -224,8 +224,8 @@ const Contact: React.FC = () => {
                   viewport={{}}
                   transition={{ duration: 0.3 }}
                   whileHover={{
-                    y: -8,
-                    scale: 1.02,
+                    scale: 1.05,
+                    zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
@@ -254,8 +254,8 @@ const Contact: React.FC = () => {
                   viewport={{}}
                   transition={{ duration: 0.3 }}
                   whileHover={{
-                    y: -8,
-                    scale: 1.02,
+                    scale: 1.05,
+                    zIndex: 10,
                     transition: { duration: 0.1, ease: "easeOut" },
                   }}
                   className="flex items-center gap-4 group cursor-pointer bg-white px-6 rounded-xl shadow-md hover:shadow-2xl border border-transparent hover:border-olive/20 hover:bg-olive/[0.02]"
